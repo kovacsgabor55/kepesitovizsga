@@ -1,6 +1,7 @@
 package hu.nive.ujratervezes.kepesitovizsga.army;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 public class Army {
@@ -23,17 +24,14 @@ public class Army {
     }
 
     public void damageAll(int damage) {
-        for (MilitaryUnit item : militaryUnitList) {
+        Iterator<MilitaryUnit> it = militaryUnitList.iterator();
+        while (it.hasNext()) {
+            MilitaryUnit item = it.next();
             item.sufferDamage(damage);
-        }
-        List<MilitaryUnit> tmp = new ArrayList<>();
-        for (MilitaryUnit item : militaryUnitList) {
-            if (item.getHitPoints() >= 25) {
-                tmp.add(item);
+            if (item.getHitPoints() < 25) {
+                it.remove();
             }
         }
-        militaryUnitList.clear();
-        militaryUnitList.addAll(tmp);
     }
 
     public void addUnit(MilitaryUnit militaryUnit) {

@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class JurassicPark {
-    private MariaDbDataSource dataSource;
+    private final MariaDbDataSource dataSource;
 
     public JurassicPark(MariaDbDataSource dataSource) {
         this.dataSource = dataSource;

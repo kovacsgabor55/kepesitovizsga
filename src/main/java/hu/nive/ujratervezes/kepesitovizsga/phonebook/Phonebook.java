@@ -12,8 +12,8 @@ public class Phonebook {
         }
 
         StringBuilder sb = new StringBuilder();
-        for (String employee : contacts.keySet()) {
-            sb.append(employee).append(": ").append(contacts.get(employee)).append("\n");
+        for (String item : contacts.keySet()) {
+            sb.append(item).append(": ").append(contacts.get(item)).append("\n");
         }
 
         try {
